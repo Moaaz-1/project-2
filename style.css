@@ -1,0 +1,1317 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --main-color: #19c8fa;
+}
+
+header {
+    width: 100%;
+    background-image: url(/extensions/landing.jpg);
+    height: 100vh;
+    background-size: cover;
+}
+
+header .nav {
+    width: 75%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media(max-width:1000px) {
+    header .nav {
+        width: 90%;
+    }
+}
+
+header .nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-color: #b4b4b4;
+    width: 100%;
+    height: 1px;
+}
+
+header .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0 0 0 / 60%);
+}
+
+header .nav .r-nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .nav .r-nav span {
+    position: relative;
+    margin-left: 50px;
+}
+
+header .nav .r-nav span i {
+    color: white;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+header .nav .r-nav span::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    background-color: white;
+    width: 1px;
+    height: 100%;
+}
+
+header .nav ul {
+    display: flex;
+    margin: 0 5px;
+    position: relative;
+    height: 100%;
+}
+
+header .nav ul li {
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+header .nav ul li a {
+    color: white;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+header .nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    background-color: var(--main-color);
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+}
+
+header .nav ul li a:hover {
+    transition: 0.3s;
+    color: var(--main-color);
+}
+
+header .nav ul li:hover::after {
+    left: 0;
+    transition: 0.5s;
+}
+
+header .nav ul .f-li:hover::after {
+    display: none;
+}
+
+header .nav .r-nav .fa-bars {
+    display: none;
+}
+
+@media(max-width:767px) {
+    header .nav .r-nav .fa-bars {
+        display: block;
+        font-size: 25px;
+        color: white;
+        transition: 0.4s;
+        cursor: pointer;
+    }
+
+    header .nav .r-nav .fa-bars:hover {
+        color: var(--main-color);
+    }
+
+    header .nav .r-nav .fa-bars:hover+ul {
+        display: block;
+    }
+
+    header .nav .r-nav ul {
+        display: none;
+        width: 120px;
+        background-color: rgba(0, 0, 0, 0.259);
+        height: fit-content;
+        position: absolute;
+        top: 70px;
+        right: 60px;
+        transition: 0.3s;
+    }
+
+    header .nav .r-nav ul li {
+        margin: 10px 0;
+        justify-content: center;
+    }
+
+    header .nav .r-nav ul li a {
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+header .info {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: rgb(15 116 143 / 70%);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 300px;
+
+}
+
+header .info .text {
+    color: white;
+    max-height: 100%;
+    max-width: 500px;
+
+}
+
+header .info .text h1 {
+    font-family: system-ui;
+    font-size: 30px;
+    font-weight: 350;
+    margin-bottom: 20px;
+}
+
+header .info .text p {
+    font-family: system-ui;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+header .left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+header .right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+header .scroll {
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .scroll li {
+    margin-right: 5px;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+header .scroll .active {
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+
+}
+
+@media(max-width:767px) {
+    header .left {
+        display: none;
+    }
+
+    header .right {
+        display: none;
+    }
+}
+
+@media(max-width:1060px) {
+    header .info {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.services {
+    padding: 50px 0;
+    background-color: white;
+}
+
+.services .title {
+    text-align: center;
+    margin: 0 auto;
+    width: 450px;
+}
+
+.services .title h1 {
+    font-size: 40px;
+    font-family: system-ui;
+    margin-bottom: 20px;
+    font-weight: normal;
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.services .title h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 2px;
+    background-color: black;
+}
+
+.services .title h1::before {
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    border: 1px solid black;
+}
+
+.services .title p {
+    color: #777;
+    line-height: 1.5;
+}
+
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 100px;
+    width: 90%;
+    margin: 50px auto;
+}
+
+.services .container .element {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.services .container .element i {
+    margin-right: 50px;
+}
+
+.services .container .element h1 {
+    color: var(--main-color);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.services .container .element p {
+    color: #777;
+    line-height: 1.5;
+}
+
+@media(max-width:450px) {
+    .services .container .element {
+        width: 100%;
+    }
+
+    .services .container .element i {
+        margin-right: 10px;
+    }
+
+    .services .title {
+        width: 100%;
+    }
+
+    .services .container .element p {
+        width: 300px;
+    }
+}
+
+.designs {
+    background-image: url(extensions/design.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.designs .features {
+    width: 45%;
+    background-color: rgb(15 116 143 / 70%);
+    padding: 50px;
+    z-index: 2;
+}
+
+.designs .features h1 {
+    margin-bottom: 40px;
+    font-size: 25px;
+    color: white;
+    font-weight: 400;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.designs .features i {
+    font-size: 15px;
+    margin-right: 20px;
+    color: white;
+}
+
+.designs .features li {
+    margin-bottom: 30px;
+    color: white;
+}
+
+.designs .landing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    z-index: 1;
+}
+
+.designs img {
+    z-index: 2;
+    margin-bottom: -250px;
+    margin-left: 5%;
+}
+
+@media(max-width:811px) {
+    .designs .features {
+        width: 100%;
+    }
+
+    .designs img {
+        display: none;
+    }
+}
+
+.portfolio {
+    padding: 50px 0;
+}
+
+.portfolio .title {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+@media(max-width:700px) {
+    .portfolio .title {
+        width: 80%;
+    }
+
+    .portfolio .container div {
+        height: 500px;
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+.portfolio .title h1 {
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 80px;
+    font-weight: 400;
+    font-size: 40px;
+    position: relative;
+}
+
+.portfolio .title h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 2px;
+    background-color: black;
+}
+
+.portfolio .title h1::before {
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    border: 1px solid black;
+}
+
+.portfolio .title p {
+    color: #717171;
+}
+
+.portfolio .filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio .filter span {
+    padding: 8px 10px;
+    margin-right: 5px;
+}
+
+.portfolio .container {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    row-gap: 5px;
+}
+
+.portfolio .container div {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio .container div img {
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio .container .content {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.77);
+    width: 100%;
+    height: 20%;
+    padding: 15px 0;
+}
+.portfolio .container .content h2{
+    font-size: 17px;
+    font-weight: 100;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+.portfolio .container .content h3{
+    font-size: 17px;
+    font-weight: 100;
+    margin-left: 40px;
+    color: var(--main-color);
+}
+.portfolio .container div:hover img {
+    transform: scale(1.1) rotate(3deg);
+    transition: 0.3s;
+}
+
+.portfolio .container div:hover .content{
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 2;
+}
+.portfolio button{
+    margin: 0 auto;
+    display: block;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.awesome-video{
+    width: 100%;
+    position: relative;
+}
+.awesome-video video{
+width: 100%;
+}
+.awesome-video .info{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color:rgb(15 116 143 / 70%);
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 50px 0;
+    z-index: 2;
+}
+@media(max-width:767px){
+    .awesome-video .info{
+    padding: 10px;
+    }
+    }
+.awesome-video .info h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 350;
+    font-size: 25px;
+color: white;
+margin-bottom: 20px;
+}
+.awesome-video .info h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 350;
+    font-size: 25px;
+color: white;
+margin-bottom: 20px;
+}
+.awesome-video .info button{
+background-color: black;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+}
+.awesome-video .landing{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(0 0 0 / 60%) ;
+}
+.about{
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+.about .title{
+    text-align: center;
+    margin: 0 auto;
+    width: 450px;
+    margin-bottom: 150px;
+}
+.about .title h1 {
+font-size: 40px;
+font-family: system-ui;
+margin-bottom: 20px;
+font-weight: normal;
+text-transform: uppercase;
+position: relative;
+}
+
+.about .title p {
+color: #777;
+line-height: 1.5;
+}
+.about .title h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 2px;
+    background-color: black;
+}
+
+.about .title h1::before {
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    border: 1px solid black;
+}
+.about .title + img{
+margin-left: 50%;
+transform: translateX(-50%);
+}
+@media(max-width:767px){
+.about img{
+    width: 95%;
+}
+.about .title{
+    width: 95%;
+}
+}
+.achivments {
+    background-image: url(/extensions/stats.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+.achivments::before{
+content: "";
+position: absolute;
+top:0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color:rgb(0 0 0 / 70%);
+z-index: -1;
+}
+.achivments .numbers{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    row-gap: 50px;
+    background-color: rgb(15 116 143 / 70%);
+    width: 80%;
+    z-index: 1;
+    padding: 50px 0;
+    margin: 0 auto;
+    justify-content: center;
+} 
+.achivments .numbers div{
+    margin: 0 auto;
+    text-align: center;
+}
+.achivments .numbers div i{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.achivments .numbers div h1{
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+}
+.achivments .numbers div h3{
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 100;
+}
+.about .skills{
+    padding: 100px 0;
+    display: flex;
+/* flex-wrap: wrap; */
+justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
+}
+.about .skills .posts{
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+}
+.about .skills .posts h1{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 100;
+    
+}
+.about .skills .posts p{
+    color: rgb(91, 91, 91);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    /* width: 85%; */
+    margin: 0 auto;
+}
+.about .skills .posts .post{
+    margin-top: 100px;
+    display: flex;
+    width: 100%;
+    /* justify-content: space-around; */
+}
+.about .skills .posts .post div{
+    border-bottom: 1px solid black;
+    /* width: 350px; */
+    
+}
+.about .skills .posts .post img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    float: left;
+    margin-right: 50px;
+}
+.about .skills .posts .post div p{
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.about .skills .posts .post div span{
+    float: right;
+    margin-bottom: 10px;
+    color: rgb(91, 91, 91);
+}
+.about .skills .posts .scroll {
+    display: flex;
+    margin-left: 50%;
+    transform: translateX(-10%);
+    margin-top: 50px;
+}
+
+.about .skills .posts .scroll li {
+    margin-right: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    width: 10px;
+    height: 10px;
+}
+
+.about .skills .posts .scroll .active {
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    
+}
+.about .percentage{
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+}
+@media(max-width:1150px){
+    .about .skills{
+        flex-wrap: wrap;
+    }
+    .about .skills .posts{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+    .about .percentage{
+        width: 100%;
+    }
+}
+@media(max-width:500px){
+    .about .skills{
+        width: 100%;
+    }
+    .about .posts .post{
+        display: grid !important;
+        width: 90% !important;
+    }
+    .about .posts .post div{
+        width: 90%;
+        margin-left: 50%;
+        transform: translateX(-45%);
+    }
+    .about .posts .post img{
+        margin-bottom: 20px;
+        margin-left: 50%;
+        transform: translateX(-30%);
+    }
+}
+.about .percentage h1{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 100;
+}
+.about .percentage p{
+    color: rgb(91, 91, 91);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.about .analysis{
+    width: 90%;
+    margin: 100px auto;
+}
+.about .analysis div{
+    width: 100%;
+    position: relative;
+    margin: 30px 0 auto;
+}
+.about .analysis div h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.about .analysis div span{
+    display: block;
+    width: 100%;
+    height: 35px;
+    background-color: #cdcdcd;
+}
+.about .analysis div .second{
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    background-color: var(--main-color);
+}
+.about .analysis div .second::after{
+    content: attr(data-progress);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: -36px;
+    right: -20px;
+}
+.about .analysis div .second::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color: black transparent transparent;
+    top: -13px;
+    right: -9px;
+}
+.about .qoute{
+    background-image: url(/extensions/quote.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px;
+    /* height: 200px; */
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+@media(max-width:500px){
+    .about .qoute{
+        padding: 10px;
+    }
+}
+.about .qoute::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(0, 0, 0, 0.785);
+    z-index: -1;
+}
+.about .qoute p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 350px;
+    margin-bottom: 30px;
+    font-size: 30px;
+color: white;
+}
+.about .qoute h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 350;
+    color: white;
+}
+.pricing{
+    padding: 50px 0;
+    width: 100%;
+}
+.pricing .title{
+    width: 100%;
+    text-align: center;
+}
+.pricing .title h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    position: relative;
+}
+.pricing .title h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 2px;
+    background-color: black;
+}
+
+.pricing .title h1::before {
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    border: 1px solid black;
+}
+.pricing .title p{
+    color: rgb(91, 91, 91);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.pricing .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    column-gap: 10px;
+    row-gap: 20px;
+    width: 90%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.pricing .container .plan {
+    background-color: #fcfcfc;
+}
+.pricing .container .plan .price{
+text-align: center;
+    padding: 30px;
+border-top:1px solid var(--main-color) ;
+border-bottom:1px solid var(--main-color) ;
+}
+.pricing .container .plan .price h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+margin-bottom: 20px;
+font-size: 25px;
+font-weight: 350;
+}
+.pricing .container .plan .price span{
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 700;
+font-size: 60px;
+position: relative;
+}
+.pricing .container .plan .price span::after{
+    content: "$";
+    font-size: 25px;
+    font-family: system-ui;
+    font-weight: 400;
+    position: absolute;
+    top: -15px;
+    left: -30px;
+}
+.pricing .container .plan .price span::before{
+    content: "/Mo";
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 5px;
+    right: -65px;
+}
+.pricing .container .plan .features{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--main-color);
+    padding: 20px 20px 20px 0;
+}
+.pricing .container .plan .features span{
+    padding-bottom: 20px;
+    margin: 0 auto;
+    width: 150px;
+    display: block;
+    border-bottom: 2px solid var(--main-color);
+    margin-bottom: 30px;
+}
+.pricing .container .plan .features .last{
+    border: none;
+    margin-bottom: 0;
+}
+.pricing .container .plan .foot{
+    padding: 40px;
+    text-align: center;
+}
+.pricing .container .plan .foot a{
+    color: black;
+    border: 1px solid var(--main-color);
+    padding: 20px;
+}
+.pricing .container .plan .foot a:hover{
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.3s;
+}
+.pricing h2{
+    margin: 30px 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+.pricing button{
+    margin-left:50%;
+    transform: translateX(-50%);
+    border: none;
+    color: white;
+    background-color: var(--main-color);
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 350;
+}
+.subscribe{
+    background-image: url(/extensions/subscribe.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px 20px;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.subscribe::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.426);
+}
+.subscribe div{
+    position: relative;
+    border: 1px solid;
+    height: fit-content;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    width: 370px;
+    justify-content: center;
+    align-items: center;
+
+}
+.subscribe div input{
+    border: 1px solid white;
+    background: none;
+    height: 20px;
+    width: 200px;
+    padding: 20px 120px 20px 50px;
+    color: white;
+outline: none;
+margin-right: 150px;
+}
+.subscribe div button{
+    content: "Subscribe";
+    color: white;
+    position: absolute;
+    right: -2px;
+    background-color: var(--main-color);
+    z-index: 2;
+    height: 100%;
+    padding: 0 21px;
+    top: 0px;
+    border: none;
+    cursor: pointer;
+}
+.subscribe div label{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    height: 20px;
+    padding: 20px;
+}
+.subscribe div label i{
+color: white;
+text-align: center;
+font-size: 20px;
+}
+.subscribe p{
+    padding: 25px;
+    text-align: center;
+    color: white;
+}
+.contact{
+    padding: 50px 0;
+    width: 100%;
+}
+.contact .title{
+    width: 100%;
+    text-align: center;
+}
+.contact .title h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    position: relative;
+}
+.contact .title h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 2px;
+    background-color: black;
+}
+
+.contact .title h1::before {
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    border: 1px solid black;
+}
+.contact .title p{
+    color: rgb(91, 91, 91);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+.contact .container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 100px auto;
+    justify-content: center;
+}
+.contact .container .inputs{
+   width: 600px;
+   margin-right: 40px;
+}
+@media(max-width:1018px){
+    .contact .container .inputs{
+        width: 90%;
+        margin-right: 0;
+        margin: 0 auto;
+        margin-bottom: 100px;
+     }
+     .contact .container .info{
+        margin: 0 auto;
+    }
+    .contact .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 100px auto;
+    }
+}
+.contact .container .inputs form input{
+    display: block;
+    width: 93%;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.contact .container .inputs form textarea{
+    display: block;
+    width: 97%;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 15px 0 0 15px;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+.contact .container .inputs form button{
+    float: right;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: var(--main-color);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.contact .container .info div{
+margin-bottom: 80px;
+}
+.contact .container .info div h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    font-weight: 350;
+    margin-bottom: 20px;
+}
+.contact .container .info div h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 5px;
+color: #8c8c8c;
+}
+.contact .container .info .italic h3{
+    font-style: italic;
+}
+footer{
+        background-image: url(/extensions/subscribe.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 30px 0;
+        z-index: 1;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+}
+footer::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.685);
+}
+footer img{
+    margin-bottom: 50px;
+}
+footer .social h2{
+    color: white;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+footer .social ul{
+    margin-bottom: 50px;
+}
+footer .social ul i{
+    margin-right: 10px;
+    color: white;
+}
+footer h3{
+    color: white;
+}
